@@ -1,0 +1,51 @@
+*, *:before, *:after { box-sizing: border-box; }
+
+body{
+  text-align: center;
+}
+
+img.img1 {
+  height: 75%;
+  width: 50%;
+}
+
+img.img3 {
+  height: 50%;
+  width: 50%;
+}
+
+ul {
+  text-align: center;
+}
+
+a {
+  color: #cccccc;
+  font-size: large;
+}
+
+div {
+  font-size: large;
+  text-align: center;
+  border: 5px solid green;
+  padding: 15px;
+  border-radius: 40px;
+  color: white;
+  background-color: black;
+}
+h3 {color: #00cc00;}
+h1 {
+    color: #00cc00;
+    font-size: 300%;
+    }
+
+/*
+  font-size will change the size of a font
+  border will put a border around your object
+  color should be called text color. see http://stackoverflow.com/questions/4296586/why-is-the-text-colour-property-called-color
+  background-color will change the color of the background of your slected object
+  height and width will control the size of the content area of an element
+  img will change your imgages
+  a changes your ancor points (links)
+  text-shadow: 3px 4px 5px #cccccc;
+  dont forget to check out html charactor code
+*/
