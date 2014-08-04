@@ -1,0 +1,18 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/css/Website_style.css">
+</head>
+
+
+<form action="/edit_delete/<%= @posts.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="title">Edit Title</label><br>
+  <input type="text" name="post[title]" value="<%= @posts.title %>" id="title"><br><br>
+  <label for="body">Edit Post</label><br>
+  <textarea name="post[body]" id="body" rows="5" cols="30" value="<%= @posts.body %>"></textarea><br>
+  <input type="submit" value="Post Now">
+</form>
+
+<form action="/delete_post/<%= @posts.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

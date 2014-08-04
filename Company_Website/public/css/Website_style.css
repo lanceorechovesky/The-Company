@@ -1,0 +1,16 @@
+body {background-color: #cccccc;
+        color: #259525;}
+
+a {color: #00001f;
+    text-decoration: underline dashed;}
+
+footer {text-align: center;}
+
+.title {width: 550px;
+          margin-left: 345px;
+          color: #259525;
+          border: 7px  #00001f;
+          border-radius: 60px;
+          text-align: center;
+          box-shadow: inset 5px 5px 5px #00001f;
+          text-shadow: #00001f 1.2px 1.2px;}
