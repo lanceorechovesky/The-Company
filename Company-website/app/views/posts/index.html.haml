@@ -1,0 +1,16 @@
+%ul
+  %h1 
+    = "#{@subject.subject}"
+  = "#{@subject.disc}"
+%br/
+= link_to "Subjects", post_subjects_path
+%a ---
+= link_to "Make a post", new_post_subject_post_path(@subject)
+%a ---
+= link_to "home", root_path
+%hr/
+- @post.reverse.each do |p|
+  %ol
+    = link_to p.title, post_subject_post_path(@subject, p)
+    %br/
+    = p.body

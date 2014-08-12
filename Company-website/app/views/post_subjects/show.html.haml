@@ -1,0 +1,47 @@
+%h1 
+  = "#{@subject.subject}"
+= link_to "Edit Subject", edit_post_subject_path(@subject)
+%a ---
+= link_to "Remove Subject", post_subject_path(@subject), method: :delete
+%a ---
+= link_to "Back", post_subjects_path
+
+%hr/ 
+%strong
+  = "subject"
+%br/
+= @subject.subject
+%br/
+%br/
+%strong
+  = "description"
+%br/
+= @subject.disc
+%br/
+%br/
+%strong
+  = "Subject Comments"
+= form_for @comment, url: create_comment_post_subject_path(@subject) do |f|
+  = f.label :body
+  %br/
+  = f.text_area :body
+  %br/
+  =f.submit "Add Comment"
+%hr/
+%br/
+%ul
+  - @subject.comments.reverse.each do |comment|
+    - if comment.body
+      = comment.body
+      = link_to "[remove]", destroy_comment_post_subject_path(@subject, comment_id: comment.id), method: :delete
+      %br/
+      %br/
+      
+
+
+
+
+
+
+
+

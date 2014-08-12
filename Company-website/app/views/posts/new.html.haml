@@ -1,0 +1,18 @@
+%h1 Tell us what's on your mind!!!
+= link_to "Back", post_subject_posts_path(@subject)
+%hr/
+= form_for [@subject, @post] do |f|
+  %ul
+    -if @post.errors.any?
+      = "#{pluralize(@post.errors.count, "error")} Stopped this from posting:"
+      - @post.errors.full_messages.each do |msg|
+        %li
+          = msg
+  = f.label :title
+  = f.text_field :title
+  %br/
+  = f.label :body
+  = f.text_area :body
+  %br/
+  %br/
+  = f.submit "Post up!"

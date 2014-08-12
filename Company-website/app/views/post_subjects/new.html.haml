@@ -1,0 +1,18 @@
+%h1 Add a new Subject
+= link_to "Back", post_subjects_path
+%hr/
+%br/
+= form_for @subject do |f|
+  %strong
+    = f.label :subject
+  %br/
+  = f.text_field :subject
+  %br/
+  %br/
+  %strong
+    = f.label :disc
+  %br/
+  = f.text_area :disc
+  %br/
+  %br/
+  = f.submit "Add"

@@ -1,0 +1,19 @@
+%h1 
+  = "Edit #{@subject.subject} here"
+= link_to "Back", post_subject_path(@subject)
+%a ---
+= link_to "Remove Subject", post_subject_path(@subject), method: :delete
+%hr/
+
+=form_for @subject do |f|
+  = f.label :subject
+  %br/
+  = f.text_field :subject
+  %br/
+  %br/
+  = f.label :disc
+  %br/
+  = f.text_area :disc
+  %br/
+  %br/
+  = f.submit "Edit"
