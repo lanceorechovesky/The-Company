@@ -1,4 +1,4 @@
-%h1 Company Forms
+%h1.formlogo Company Forms
 
 = link_to "Add subject", new_post_subject_path
 %a ---
@@ -6,9 +6,10 @@
 %hr/
 - @subject.each do |s|
   %ol
-    = link_to s.subject, post_subject_posts_path(s)
+    %strong
+      = link_to s.subject, post_subject_posts_path(s)
     %a -
-    = link_to "options", post_subject_path(s)
+    = link_to "options", post_subject_path(s), class: "subjectopt"
     %br/
     = s.disc
     %br/

@@ -1,7 +1,21 @@
 body {background-color: #cccccc;
         color: #195E31;
         text-align: center;}
-a {color: #00003D;}
+a {color: #00003D;
+    text-decoration: none;}
+.logo {border-radius: 100px;
+        width: 400px;
+        margin-left: 440px;
+        box-shadow: -7px -5px 5px #00003D;
+        text-shadow: #00003D 1.2px 1px;}
+
+.formlogo {border-radius: 100px;
+        width: 300px;
+        margin-left: 490px;
+        box-shadow: -7px -5px 5px #00003D;
+        text-shadow: #00003D 1.2px 1px;}
+
+.subjectopt {text-decoration: none;}        
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
