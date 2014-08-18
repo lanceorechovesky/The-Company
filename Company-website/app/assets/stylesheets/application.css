@@ -15,7 +15,13 @@ a {color: #00003D;
         box-shadow: -7px -5px 5px #00003D;
         text-shadow: #00003D 1.2px 1px;}
 
-.subjectopt {text-decoration: none;}        
+.subjectopt {text-decoration: none;} 
+
+.info_index {border-radius: 100px;
+        width: 400px;
+        margin-left: 440px;
+        box-shadow: -7px -5px 5px #00003D;
+        text-shadow: #00003D 1.2px 1px;}       
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

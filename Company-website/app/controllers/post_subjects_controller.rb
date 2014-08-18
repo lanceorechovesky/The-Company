@@ -1,11 +1,11 @@
 class PostSubjectsController < ApplicationController
+  before_action :find_sub, only: [:show, :create_comment, :edit, :update, :destroy, :destroy_comment]
 
   def index
     @subject = PostSubject.all
   end
 
   def show
-    @subject = find_sub
     @comment = @subject.comments.new
   end
 
@@ -23,29 +23,24 @@ class PostSubjectsController < ApplicationController
   end
 
   def create_comment
-    @subject = find_sub
     @subject.comments.create com_data
     redirect_to post_subject_path(@subject)
   end
 
   def edit
-    @subject = find_sub
   end
 
   def update
-    @subject = find_sub
     @subject.update_attributes subject_data
     redirect_to post_subject_path(@subject)
   end
 
   def destroy
-    @subject = find_sub
     @subject.delete
     redirect_to post_subjects_path
   end
 
   def destroy_comment
-    @subject = find_sub
     @comment = find_com
     @comment.destroy
     redirect_to post_subject_path(@subject)

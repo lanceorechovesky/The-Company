@@ -14,5 +14,11 @@
   = f.label :body
   = f.text_area :body
   %br/
+  - @tag.each do |tag|
+    = check_box_tag 'post[tag_ids][]', tag.id, @post.tags.include?(tag) 
+    = tag.name
+    %br/
+    %br/
+  %br/
   %br/
   = f.submit "Post up!"

@@ -1,0 +1,10 @@
+%h1 
+  = "All Posts Marked as #{@tag.name}"
+= link_to "Back", tags_path
+%a ---
+= link_to "Home", root_path
+%hr/
+
+- @tag.each do |tag|
+  = tag.name
+  

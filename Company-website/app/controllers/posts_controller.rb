@@ -1,23 +1,21 @@
 class PostsController < ApplicationController
+  before_action :find_sub, only: [:index, :show, :new, :create, :edit, :update, :destroy, :create_comment, :destroy_comment]
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :create_comment, :destroy_comment]
 
   def index
-    @subject = find_sub
     @post = @subject.posts.all
   end
 
   def show
-    @subject = find_sub
-    @post = find_post
     @comment = @post.comments.new
   end
 
   def new
-    @subject = find_sub
     @post = Post.new
+    @tag = Tag.all
   end
 
   def create
-    @subject = find_sub
     @post = @subject.posts.new(post_data)
     if @post.save == true
       redirect_to post_subject_posts_path(@subject)
@@ -27,34 +25,25 @@ class PostsController < ApplicationController
   end
 
   def create_comment
-    @subject = find_sub
-    @post = find_post
     @post.comments.create com_data
     redirect_to post_subject_post_path(@subject, @post)
   end
 
   def edit
-    @subject = find_sub
-    @post = find_post
+    @tag = Tag.all
   end
 
   def update
-    @subject = find_sub
-    @post = find_post
     @post.update_attributes post_data
     redirect_to post_subject_post_path(@subject, @post)
   end
 
   def destroy
-    @subject = find_sub
-    @post = find_post
     @post.delete
     redirect_to post_subject_posts_path(@subject)
   end
 
   def destroy_comment
-    @subject = find_sub
-    @post = find_post
     @comment = find_com
     @comment.destroy
     redirect_to post_subject_post_path(@subject, @post)
@@ -74,7 +63,7 @@ private
   end
 
   def post_data
-    params.require(:post).permit(:title, :body, :workflow_state, :post_subject_id)
+    params.require(:post).permit(:title, :body, :workflow_state, :post_subject_id, tag_ids: [])
   end
 
   def com_data

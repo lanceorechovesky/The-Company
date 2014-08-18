@@ -20,17 +20,21 @@
     = f.label :body
   %br/
   = @post.body
-%br/
+  %br/
+  %br/
 %strong
-  = "Post Comments"
+  = "Tags"
+%br/
+- @post.tags.each do |tag|
+  = tag.name
+  %br/
+%br/
+%hr/
 = form_for @comment, url: create_comment_post_subject_post_path(@subject, @post) do |f|
-  = f.label :body
+  = f.submit "Comment Here"
   %br/
   = f.text_area :body
-  %br/
-  %br/
-  =f.submit "Add Comment"
-%hr/
+  
 %ul
   - @post.comments.reverse.each do |comment|
     - if comment.body

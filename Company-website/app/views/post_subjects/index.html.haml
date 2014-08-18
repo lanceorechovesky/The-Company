@@ -2,6 +2,8 @@
 
 = link_to "Add subject", new_post_subject_path
 %a ---
+= link_to "Search by tag", tags_path
+%a ---
 = link_to "home", root_path
 %hr/
 - @subject.each do |s|

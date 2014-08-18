@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  resources :company_info 
+  resources :tags
+
   resources :post_subjects do
     member do
       post :create_comment

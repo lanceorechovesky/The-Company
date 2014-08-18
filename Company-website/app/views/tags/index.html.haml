@@ -1,0 +1,11 @@
+%h1 Post Tags
+= link_to "Back", post_subjects_path
+%a ---
+= link_to "Home", root_path
+%hr/
+
+- @tag.each do |tag|
+  = link_to tag.name, tag_path(tag)
+  %br/
+  %a -
+  %br/
