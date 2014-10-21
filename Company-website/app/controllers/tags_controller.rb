@@ -5,6 +5,7 @@ class TagsController < ApplicationController
   end
 
   def show
+    @post = Post.find params[:post_id]
     @tag = Tag.find params[:id]
   end
 

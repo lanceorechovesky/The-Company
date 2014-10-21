@@ -5,6 +5,8 @@
 = link_to "Home", root_path
 %hr/
 
-- @tag.each do |tag|
-  = tag.name
+- @tag.posts.each do |tag|
+  = link_to tag.title, post_subject_post_path(@subject, @post)
+  %br/
+  %br/
   
